@@ -44,7 +44,7 @@ router.post('/', async function(req, res, next) {
     return;
   }
 
-  res.render('randomRestaurant', { title: 'FswIo', resturants: restaurants });
+  res.render('randomRestaurant', { title: 'FswIo', restaurants: restaurants });
 });
 
 router.get('/tazzImage', async function(req, res, next) {

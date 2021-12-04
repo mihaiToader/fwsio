@@ -2,18 +2,18 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="/javascripts/carousel.js"></script>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <button id="start">Start</button>
-    <button id="stop">Stop</button>
-    <div id="container">
-      <div id="carousel">
-        
-      </div>
-    </div>
+    <form id="container" action="/randomRestaurant/" method="post">
+      <span>Add an URL from Tazz restaurants page</span>
+      <input id="restaurantURL" placeholder="Restaurants link" name="url"></input>
+      <button id="chooseRestaurant" type="submit">Choose</button>
+      <% if (error) { %>
+        <span id="error"><%= error %></h2>
+      <% } %>
+    </form>
   </body>
 </html>

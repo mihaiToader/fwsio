@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/carousel.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <div class="resturants-title">
+      <%= resturants.length %> restaurants to choose from
+    </div>
+    <div id="container">
+      <div id="separator"></div>
+      <div id="carousel">
+          <% resturants.forEach(function(resturant){ %>
+            <div class="image-container">
+              <img src=<%= resturant.imageURL %> width="300" height="150" />
+              <div class="name-container">
+                <div class="name">
+                  <%= resturant.name %>
+                </div>
+              </div>
+            </div>
+          <% }); %>
+          <% resturants.forEach(function(resturant){ %>
+            <div class="image-container">
+              <img src=<%= resturant.imageURL %> width="300" height="150" />
+              <div class="name-container">
+                <div class="name">
+                  <%= resturant.name %>
+                </div>
+              </div>
+            </div>
+          <% }); %>
+      </div>
+      <span style="display: none;" id="nrResturants"><%= resturants.length %></span>
+    </div>
+  </body>
+</html>

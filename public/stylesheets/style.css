@@ -7,13 +7,57 @@ a {
   color: #00B7FF;
 }
 
+.resturants-title {
+  margin: 10px 0;
+}
+
 #container {
+  position: relative;
   width: 100%;
-  background-color: red;
+  background-color: gray;
   overflow: hidden;
 }
 
 #carousel {
   direction: rtl;
+  display: flex;
+}
+
+#separator {
+  position: absolute;
+  height: 400px;
+  width: 5px;
+  background-color: black;
+  right: 50%;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.name {
+  margin-top: 10px;
+  border: 1px solid #464646;
+  padding: 4px;
+  border-radius: 4px;
+  color: rgb(216, 196, 196);
+  background-color: #464646;
+  width: 90%;
+  text-align: center;
+}
+
+.name-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-weight: bold;
+}
+
+.image-container {
+  position: relative;
   display: flex;
 }

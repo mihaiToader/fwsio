@@ -99,7 +99,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.getElementById('start').addEventListener('click', animate);
-    document.getElementById('stop').addEventListener('click', () => {
-        runningAnimation = false;
-    });
 });

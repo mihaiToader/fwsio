@@ -7,12 +7,12 @@ const shuffleArray = require('../misc/shuffleArray');
 
 
 router.get('/', function(req, res, next) {
-  res.render('randomRestaurant', { title: 'FswIo' });
+  res.render('randomRestaurant', { title: 'FwsIo' });
 });
 
 const TAZZ_URL = 'https://tazz.ro/';
 router.post('/', async function(req, res, next) {
-  const context = { title: 'FswIo' };
+  const context = { title: 'FwsIo' };
   const { url } = req.body;
 
   if (!url) {

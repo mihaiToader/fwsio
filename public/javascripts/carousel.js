@@ -4,6 +4,23 @@ const randomIntFromInterval = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
+const displayWinner = (winner) => {
+    const container = document.getElementById('winner');
+    const name = document.getElementById('winner-name');
+    const image = document.getElementById('winner-image');
+    const order = document.getElementById('winner-order');
+    const retry = document.getElementById('winner-retry');
+
+    name.innerHTML = winner.name;
+    image.src = winner.imageURL;
+    order.href = winner.url;
+
+    retry.addEventListener('click', () => {
+        window.location.reload();
+    })
+    container.style.display = 'block';
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     let carousel = document.getElementById("carousel");
 
@@ -30,9 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const showWinner = (position) => {
-        const winner = Math.trunc(((position + carouselWidth / 2) - carouselWidth) / IMAGE_WIDTH);
-        console.log(winner);
-        alert(window.restaurants[winner].name);
+        const winnerPos = Math.trunc(((position + carouselWidth / 2) - carouselWidth) / IMAGE_WIDTH);
+        displayWinner(window.restaurants[winnerPos]);
     }
 
     const animateRight = (obj, from, to) => {
@@ -45,22 +61,19 @@ document.addEventListener("DOMContentLoaded", () => {
             speed = 200;
         } else if (rotations == 2) {
             speed = 100;
-        } else if (rotations == 3) {
-            speed = 50;
-        } else if (rotations >= 4 && from < firstSpeedBump) {
+        } else if (rotations >= 3 && from < firstSpeedBump) {
+            speed = 70;
+        } else if (rotations >= 3 && from < secondSpeedBump) {
             speed = 40;
-        } else if (rotations >= 4 && from < secondSpeedBump) {
-            speed = 30;
-        } else if (rotations >= 4 && from < thirdSpeedBump) {
+        } else if (rotations >= 3 && from < thirdSpeedBump) {
             speed = 10;
-        } else if (rotations >= 4 && from < stopPosition) {
+        } else if (rotations >= 3 && from < stopPosition) {
             setTimeout(() => {
                 showWinner(from);
             }, 1000); 
             runningAnimation = false;
             return;
         } 
-        console.log(from, max, stopPosition, carouselWidth, rotations, speed)
 
         if (from >= max) {
             rotations++;
@@ -82,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         runningAnimation = true;
         resetData();
-        console.log('animate');
         animateRight(carousel, carouselWidth, nrResturants * 2 * IMAGE_WIDTH);
     }
 

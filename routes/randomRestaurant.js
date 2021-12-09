@@ -3,11 +3,12 @@ const router = express.Router();
 const fetch = require('node-fetch');
 
 const getTazzRestaurants = require('../parsers/getTazzRestaurants');
+const shuffleArray = require('../misc/shuffleArray');
+
 
 router.get('/', function(req, res, next) {
   res.render('randomRestaurant', { title: 'FswIo' });
 });
-
 
 const TAZZ_URL = 'https://tazz.ro/';
 router.post('/', async function(req, res, next) {
@@ -43,6 +44,13 @@ router.post('/', async function(req, res, next) {
     res.render('index', { ...context, error: `Could not extract the resturants from that`});
     return;
   }
+
+  if (restaurants.length === 0) {
+    res.render('index', { ...context, error: `0 restaurants for that URL`});
+    return;
+  }
+
+  shuffleArray(restaurants);
 
   res.render('randomRestaurant', { title: 'FswIo', restaurants: restaurants });
 });

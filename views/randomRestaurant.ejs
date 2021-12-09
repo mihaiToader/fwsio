@@ -2,14 +2,15 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="/javascripts/carousel.js"></script>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <button id="start">Start</button>
+    <p>From Where Should I Order?</p>
+    
     <button id="stop">Stop</button>
 
     <div class="restaurants-title">
@@ -52,6 +53,23 @@
           <% }); %>
       </div>
       <span style="display: none;" id="nrResturants"><%= restaurants.length %></span>
+    </div>
+
+    <div class="start-button">
+      <button id="start">Start</button>
+    </div>
+    <div id="winner">
+        <div class="winner-container">
+          <span id="winner-title">Aaaaand the winner is:</span>
+          <span id="winner-name">Big Belly</span>
+          <img id="winner-image" src="" width="300" height="150" />
+          
+          <div class="winner-buttons">
+            <a id="winner-retry" class="winner-button">Retry</a>
+            <a id="winner-order" class="winner-button">Order</a>
+            <a id="winner-home" href="/" class="winner-button">Home</a>
+          </div>
+        </div>
     </div>
   </body>
 </html>

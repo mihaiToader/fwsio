@@ -2,12 +2,13 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="icon" type="image/png" href="/images/favicon.png"/>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>From Where Should I Order?</p>
     <form id="container" action="/randomRestaurant/" method="post">
       <span>Add an URL from Tazz restaurants page</span>
       <input id="restaurantURL" placeholder="Restaurants link" name="url"></input>

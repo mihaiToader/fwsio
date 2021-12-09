@@ -27,3 +27,29 @@ body {
     color: rgb(124, 19, 19);
     font-weight: bold;
 }
+
+#restaurantURL {
+    color: #333;
+    font-size: 1.2rem;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 0.2rem;
+    background-color: rgba(201, 154, 154, 0.19);
+    border: none;
+    display: block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+#chooseRestaurant {
+    padding: 10px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(29, 120, 12);
+    border: none;
+    width: 30%;
+    font-size: 16px;
+    font-weight: bold;
+}

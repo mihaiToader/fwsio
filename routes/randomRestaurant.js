@@ -7,7 +7,7 @@ const shuffleArray = require('../misc/shuffleArray');
 
 
 router.get('/', function(req, res, next) {
-  res.render('randomRestaurant', { title: 'FwsIo' });
+  res.render('index', { title: 'FwsIo', error: 'You need an URL first' });
 });
 
 const TAZZ_URL = 'https://tazz.ro/';
